@@ -21,9 +21,8 @@ public class Category {
 
     @Column(nullable = false, unique = true)
     private String name;
-
+    private String nameEN;
+    private String nameDE;
     @ManyToOne
     private Hotel hotel;
-
-    private String hotelName;
 }

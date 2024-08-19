@@ -18,9 +18,14 @@ public class OrderController {
     private final OrderService orderService;
 
     @PostMapping
-    public ResponseEntity<Order> createOrder(@RequestBody Order order) {
-        Order createdOrder = orderService.createOrder(order);
-        return new ResponseEntity<>(createdOrder, HttpStatus.CREATED);
+    public ResponseEntity<?> createOrder(@RequestBody Order order) {
+        try {
+            Order createdOrder = orderService.createOrder(order);
+            return new ResponseEntity<>(createdOrder, HttpStatus.CREATED);
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+            return ResponseEntity.internalServerError().body(e.getMessage());
+        }
     }
 
     // Read

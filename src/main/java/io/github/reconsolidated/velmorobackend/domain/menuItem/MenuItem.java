@@ -28,6 +28,12 @@ public class MenuItem {
     @Column(name = "display_name", nullable = false)
     private String displayName;
 
+    @Column(name = "display_name_en")
+    private String displayNameEN;
+
+    @Column(name = "display_name_de")
+    private String displayNameDE;
+
     @Column(name = "image_url", length = 500)
     private String imageUrl;
 
@@ -36,6 +42,12 @@ public class MenuItem {
 
     @Column(name = "description", length = 500)
     private String description;
+
+    @Column(name = "description_en", length = 500)
+    private String descriptionEN;
+
+    @Column(name = "description_de", length = 500)
+    private String descriptionDE;
 
     @Column(name = "active", nullable = false)
     private Boolean active;

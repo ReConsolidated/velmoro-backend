@@ -20,7 +20,7 @@ public class MenuItemService {
     }
 
     public List<MenuItem> getAllMenuItems() {
-        return menuItemRepository.findAll(Sort.by("priority"));
+        return menuItemRepository.findByActiveTrue(Sort.by("priority"));
     }
 
     public Optional<MenuItem> getMenuItemById(Long id) {
@@ -37,9 +37,13 @@ public class MenuItemService {
                     menuItem.setHotel(menuItemDetails.getHotel());
                     menuItem.setCategoryId(menuItemDetails.getCategoryId());
                     menuItem.setDisplayName(menuItemDetails.getDisplayName());
+                    menuItem.setDisplayNameEN(menuItemDetails.getDisplayNameEN());
+                    menuItem.setDisplayNameDE(menuItemDetails.getDisplayNameDE());
                     menuItem.setImageUrl(menuItemDetails.getImageUrl());
                     menuItem.setPrice(menuItemDetails.getPrice());
                     menuItem.setDescription(menuItemDetails.getDescription());
+                    menuItem.setDescriptionEN(menuItemDetails.getDescriptionEN());
+                    menuItem.setDescriptionDE(menuItemDetails.getDescriptionDE());
                     menuItem.setActive(menuItemDetails.getActive());
                     menuItem.setPriority(menuItemDetails.getPriority());
                     return menuItemRepository.save(menuItem);
@@ -48,7 +52,9 @@ public class MenuItemService {
     }
 
     public void deleteMenuItem(Long id) {
-        menuItemRepository.deleteById(id);
+        MenuItem item = menuItemRepository.findById(id).orElseThrow();
+        item.setActive(false);
+        menuItemRepository.save(item);
     }
 }
 

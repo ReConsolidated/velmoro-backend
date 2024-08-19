@@ -35,6 +35,9 @@ public class HotelService {
                 .map(hotel -> {
                     hotel.setDisplayName(hotelDetails.getDisplayName());
                     hotel.setUrlName(hotelDetails.getUrlName());
+                    hotel.setEmailAddress(hotelDetails.getEmailAddress());
+                    hotel.setWorkStartHour(hotelDetails.getWorkStartHour());
+                    hotel.setWorkEndHour(hotelDetails.getWorkEndHour());
                     return hotelRepository.save(hotel);
                 })
                 .orElseThrow(() -> new RuntimeException("Hotel not found with id " + id));

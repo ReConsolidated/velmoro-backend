@@ -27,6 +27,7 @@ public class Hotel {
     private Integer workEndHour;
 
     public boolean isInWorkingHours() {
+        if (workStartHour == null || workEndHour == null) return true;
         ZonedDateTime nowInWarsaw = ZonedDateTime.now(ZoneId.of("Europe/Warsaw"));
         LocalTime currentTime = nowInWarsaw.toLocalTime();
 

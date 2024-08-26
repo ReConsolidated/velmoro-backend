@@ -43,7 +43,9 @@ public class EmailService {
                         "<body style='font-family: Arial, sans-serif;'>" +
                         "<h1 style='color: #28a745;'>ZAMÓWIENIE POKÓJ %s VELMORO</h1>" +
                         "<p>Dzień dobry!</p>" +
-                        "<p>W systemie VELMORO właśnie pojawiło się zamówienie od <strong>%s</strong> z pokoju <strong>%s</strong>.</p>" +
+                        "<p><strong>%s</strong> z pokoju <strong>%s</strong> złożył(a) zamówienie w systemie Velmoro." +
+                        "Upewnij się, że w pokoju <strong>%s</strong> rzeczywiście mieszka osoba o imieniu <strong>%s</strong>.</p>" +
+                        "Jeśli <strong>nie</strong>, zadzwoń do pokoju i ustal co się stało. Jeśli <strong>tak</strong>:" +
                         "<p style='font-weight: bold; font-size: 1.5em;'>DOPISZ <strong>%s</strong> DO RACHUNKU pokoju <strong>%s</strong></p>" +
                         "<h2>Podsumowanie zamówienia:</h2>" +
                         "<p>%s</p>" +
@@ -51,7 +53,8 @@ public class EmailService {
                         "<p>Zespół Velmoro</p>" +
                         "</body>" +
                         "</html>",
-                order.getRoomNumber(), order.getName(), order.getRoomNumber(), formattedTotal, order.getRoomNumber(), order.prettyPrintOrderEntries()
+                order.getRoomNumber(), order.getName(), order.getRoomNumber(), order.getRoomNumber(), order.getName(),
+                formattedTotal, order.getRoomNumber(), order.prettyPrintOrderEntries()
         );
 
         MimeMessage mimeMessage = mailSender.createMimeMessage();

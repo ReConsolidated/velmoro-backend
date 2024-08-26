@@ -18,11 +18,13 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Column(nullable = false, unique = true)
     private String name;
     private String nameEN;
     private String nameDE;
+    private String svgUrl;
+    @Column(name = "priority", nullable = false, columnDefinition = "INTEGER DEFAULT 100")
+    private Integer priority;
     @ManyToOne
     private Hotel hotel;
 }

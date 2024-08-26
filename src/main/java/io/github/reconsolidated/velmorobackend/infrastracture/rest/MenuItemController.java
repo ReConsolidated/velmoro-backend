@@ -20,8 +20,8 @@ public class MenuItemController {
     }
 
     @GetMapping
-    public List<MenuItem> getAllMenuItems() {
-        return menuItemService.getAllMenuItems();
+    public List<MenuItem> getAllMenuItems(@RequestParam(required = false) String urlName) {
+        return menuItemService.getAllMenuItems(urlName);
     }
 
     @GetMapping("/{id}")

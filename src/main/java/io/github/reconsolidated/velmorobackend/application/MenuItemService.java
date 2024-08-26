@@ -19,7 +19,10 @@ public class MenuItemService {
         this.menuItemRepository = menuItemRepository;
     }
 
-    public List<MenuItem> getAllMenuItems() {
+    public List<MenuItem> getAllMenuItems(String urlName) {
+        if (urlName != null) {
+            return menuItemRepository.findByActiveTrueAndHotelUrlName(urlName, Sort.by("priority"));
+        }
         return menuItemRepository.findByActiveTrue(Sort.by("priority"));
     }
 

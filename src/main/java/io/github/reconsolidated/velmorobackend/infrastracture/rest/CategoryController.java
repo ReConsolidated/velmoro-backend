@@ -19,8 +19,8 @@ public class CategoryController {
     }
 
     @GetMapping
-    public List<Category> getAllCategories() {
-        return categoryService.getAllCategories();
+    public List<Category> getAllCategories(@RequestParam(required = false) String urlName) {
+        return categoryService.getAllCategories(urlName);
     }
 
     @GetMapping("/{id}")

@@ -8,5 +8,7 @@ import java.util.List;
 
 @Repository
 public interface MenuItemRepository extends JpaRepository<MenuItem, Long> {
-    List<MenuItem> findByActiveTrue(Sort sort);
+    List<MenuItem> findByActiveTrueAndHotelUrlName(String urlName, Sort sort);
+
+    List<MenuItem> findByActiveTrue(Sort priority);
 }

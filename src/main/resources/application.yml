@@ -13,16 +13,3 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: false
-  mail:
-    host: "pro3.mail.ovh.net"
-    port: 587
-    username: "kontakt@mamzadanie.pl"
-    password: ${SPRING_MAIL_PASSWORD}
-    test-connection: true
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
-            required: true

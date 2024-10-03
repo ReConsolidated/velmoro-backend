@@ -21,7 +21,7 @@ LABEL maintainer="reconsolidated"
 WORKDIR /app
 
 # Copy the application's jar file from the build stage image
-COPY --from=build /usr/src/app/target/velmoro-backend-*.jar application.jar
+COPY --from=build /usr/src/app/target/minilegendy-*.jar application.jar
 
 # Run the jar file
 ENTRYPOINT ["java", "-jar", "application.jar"]

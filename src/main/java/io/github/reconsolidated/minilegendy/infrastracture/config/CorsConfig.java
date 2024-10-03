@@ -1,4 +1,4 @@
-package io.github.reconsolidated.velmorobackend.infrastracture.config;
+package io.github.reconsolidated.minilegendy.infrastracture.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -12,9 +12,7 @@ public class CorsConfig implements WebMvcConfigurer {
         registry.addMapping("/**")
                 .allowedOrigins(
                         "http://localhost:5173",
-                        "https://velmoro-front.fly.dev",
-                        "https://velmoro.pl",
-                        "https://app.velmoro.pl"
+                        "https://minilegendy.fly.dev"
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")

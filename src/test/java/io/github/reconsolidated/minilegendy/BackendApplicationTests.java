@@ -1,10 +1,10 @@
-package io.github.reconsolidated.velmorobackend;
+package io.github.reconsolidated.minilegendy;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class VelmoroBackendApplicationTests {
+class BackendApplicationTests {
 
     @Test
     void contextLoads() {

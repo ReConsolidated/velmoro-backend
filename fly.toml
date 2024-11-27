@@ -9,7 +9,7 @@ primary_region = "waw"
 [build]
 
 [env]
-  SPRING_DATASOURCE_PASSWORD = "compose-postgres"
+  SPRING_DATASOURCE_PASSWORD = "override-with-secret"
   SPRING_DATASOURCE_URL = "jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:5432/staging"
   SPRING_DATASOURCE_USERNAME = "postgres.ruexpbcygjdotksrkzbn"
   swap_size_mb = "512"
